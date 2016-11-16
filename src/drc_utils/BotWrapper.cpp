@@ -23,7 +23,6 @@ namespace {
     msg.numEntries = 1;
     msg.entries.resize(1);
     msg.entries[0].key = iKey;
-    msg.entries[0].is_array = iIsArray;
     msg.entries[0].value = iValue;
     iBotWrapper.getLcm()->publish(kSetParamChannel, &msg);
   }
