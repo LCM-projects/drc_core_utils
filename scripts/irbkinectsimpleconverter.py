@@ -6,8 +6,8 @@ Converts image_t messages from KINECT_RGB channel into size-1 images_t messages 
 """
 
 import lcm
-import drc
-from bot_core import image_t, images_t
+from bot_core import image_t
+from bot_core import images_t
 
 #not needed; cosmetic
 import sys
@@ -15,7 +15,7 @@ import sys
 def convertNSend(channel, data):
     global lc
     msgIn = image_t.decode(data)
-    msgOut = images_t()
+    msgOut = images_t.images_t()
 
     # Put the 1 image into a size-1 images_t message
     msgOut.utime = msgIn.utime
